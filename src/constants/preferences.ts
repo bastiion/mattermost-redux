@@ -59,7 +59,7 @@ const Preferences: Dictionary<any> = {
             "mentionBg": "#ffffff",
             "mentionBj": "#ffffff",
             "mentionColor": "#145dbf",
-            "centerChannelBg": "#eee7ff",
+            "centerChannelBg": "#ffffff",
             "centerChannelColor": "#1a1a1a",
             "newMessageSeparator": "#ff8800",
             "linkColor": "#5a14ff",
