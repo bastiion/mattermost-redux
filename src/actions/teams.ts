@@ -611,6 +611,19 @@ export function sendEmailGuestInvitesToChannelsGracefully(teamId: string, channe
     });
 }
 
+export function  generateMassInvitationToTeam(teamId: string, to: string, amount: number, mailPrefix: string, mailSuffix: string): ActionFunc {
+    return bindClientFunc({
+       clientFunc: Client4.generateMassInvitationToTeam,
+       params: [
+           teamId,
+           to,
+           amount,
+           mailPrefix,
+           mailSuffix,
+           ],
+    });
+}
+
 export function getTeamInviteInfo(inviteId: string): ActionFunc {
     return bindClientFunc({
         clientFunc: Client4.getTeamInviteInfo,

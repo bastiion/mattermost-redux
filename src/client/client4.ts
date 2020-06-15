@@ -1213,6 +1213,16 @@ export default class Client4 {
         );
     };
 
+    generateMassInvitationToTeam = async (teamId: string, to: string, amount: number, mailPrefix: string, mailSuffix: string) => {
+        this.trackEvent('api', 'api_mass_invite_members', {team_id: teamId});
+
+
+        return this.doFetch(
+            `${this.getTeamRoute(teamId)}/invite-mass/email?to=${encodeURIComponent(to)}&amount=${amount}&mailPrefix=${encodeURIComponent(mailPrefix)}&mailSuffix=${encodeURIComponent(mailSuffix)}`,
+            {method: 'post'}
+        );
+    };
+
     sendEmailGuestInvitesToChannelsGracefully = async (teamId: string, channelIds: string[], emails: string[], message: string) => {
         this.trackEvent('api', 'api_teams_invite_guests', {team_id: teamId, channel_ids: channelIds});
 
